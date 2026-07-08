@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las Dos Puertas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="forest-bg"></div>
+  <div class="fog fog-1"></div>
+  <div class="fog fog-2"></div>
+  <div class="vignette"></div>
+  <div class="blood-rain" id="bloodRain"></div>
+  <div class="flash" id="flash"></div>
+
+  <main class="game" id="game">
+    <section class="screen active" id="startScreen">
+      <div class="card intro-card">
+        <p class="mini">Juego de terror</p>
+        <h1>LAS DOS PUERTAS</h1>
+        <p class="story">
+          En medio del bosque escuchas a una persona pidiendo ayuda. Solo una puerta lleva hasta ella.
+          La otra despierta algo que no debiste encontrar.
+        </p>
+        <button class="main-btn" id="startBtn">ENTRAR AL BOSQUE</button>
+      </div>
+    </section>
+
+    <section class="screen" id="doorScreen">
+      <header class="top-text">
+        <p class="mini">Escucha con cuidado</p>
+        <h2>¿DE DÓNDE VIENE LA VOZ?</h2>
+        <p>Elige una puerta. La ubicación cambia en cada partida.</p>
+      </header>
+
+      <div class="doors" id="doors">
+        <button class="door" data-door="1" aria-label="Puerta 1">
+          <span class="door-number">1</span>
+          <span class="door-knob"></span>
+          <span class="door-label">PUERTA 1</span>
+        </button>
+
+        <button class="door" data-door="2" aria-label="Puerta 2">
+          <span class="door-number">2</span>
+          <span class="door-knob"></span>
+          <span class="door-label">PUERTA 2</span>
+        </button>
+      </div>
+
+      <div class="countdown hidden" id="countdownBox">
+        <p id="countdownText">La puerta se está abriendo...</p>
+        <strong id="countNumber">3</strong>
+      </div>
+    </section>
+
+    <section class="screen result" id="resultScreen">
+      <div class="result-card" id="resultCard">
+        <p class="mini" id="resultMini">Resultado</p>
+        <h2 id="resultTitle">Título</h2>
+        <div class="image-frame" id="imageFrame">
+          <img id="resultImage" src="" alt="Resultado del juego" />
+        </div>
+        <p class="result-text" id="resultText"></p>
+        <button class="main-btn" id="restartBtn">VOLVER AL INICIO</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="helpAudio" src="assets/ayuda.ogg" loop></audio>
+  <audio id="suspenseAudio" src="assets/suspenso.ogg" loop></audio>
+  <audio id="raptorAudio" src="assets/raptores-atacando.ogg"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
